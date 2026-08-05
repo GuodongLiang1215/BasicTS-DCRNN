@@ -8,7 +8,7 @@ This repository records a completed reproduction of the **Diffusion Convolutiona
 - Test-set evaluation: completed
 - Forecast horizons: 15, 30, and 60 minutes
 - Prediction export: completed
-- Ground-truth versus prediction visualization: completed locally
+- Ground-truth versus prediction visualization: completed and archived
 
 ## Task and data
 
@@ -36,6 +36,14 @@ DCRNN combines recurrent sequence modelling with diffusion convolution on a road
 | 60 minutes (horizon 12) | 3.5660 | 10.32% | 7.5326 |
 
 These are full test-set metrics. The longer forecast horizon has the largest error, which is expected because uncertainty accumulates as the prediction range increases.
+
+The original BasicTS metric output is archived in [`experiments/results/test_metrics.json`](experiments/results/test_metrics.json).
+
+## Prediction visualization
+
+![DCRNN prediction versus ground truth for sensor 0](visualizations/dcrnn_sensor_0_comparison.png)
+
+The figure compares the 15-, 30-, and 60-minute forecasts for sensor 0 over one 24-hour test segment. Its displayed MAE values (2.973, 2.751, and 3.442 mph) are local to this sensor and time window; they do not replace the full test-set metrics above. DCRNN follows stable traffic periods closely, but its predictions are smoother around sudden speed drops and recovery.
 
 The detailed experiment record is available in [`experiments/DCRNN_METR_LA_results.md`](experiments/DCRNN_METR_LA_results.md).
 
