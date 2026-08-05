@@ -45,7 +45,7 @@ NUM_EPOCHS = 100
 ############################## General Configuration ##############################
 CFG = EasyDict()
 # General settings
-CFG.DESCRIPTION = 'An Example Config'
+CFG.DESCRIPTION = 'DCRNN reproduction on METR-LA'
 CFG.GPU_NUM = 1 # Number of GPUs to use (0 for CPU mode)
 # Runner
 CFG.RUNNER = SimpleTimeSeriesForecastingRunner
@@ -149,3 +149,4 @@ CFG.EVAL = EasyDict()
 # Evaluation parameters
 CFG.EVAL.HORIZONS = [3, 6, 12] # Prediction horizons for evaluation. Default: []
 CFG.EVAL.USE_GPU = True # Whether to use GPU for evaluation. Default: True
+CFG.EVAL.SAVE_RESULTS = True # Export inputs, predictions, and targets for visualization

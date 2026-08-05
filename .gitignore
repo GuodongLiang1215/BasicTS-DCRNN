@@ -1,8 +1,10 @@
 # dir
 __pycache__/
 .vscode/
+.venv-dcrnn/
 checkpoints/
 datasets/
+test_results/
 todo.md
 gpu_task.py
 cmd.sh
